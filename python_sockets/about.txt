@@ -1,0 +1,21 @@
+INET - ip4 sockets 
+ what is a sockets? 
+	- used almost everywhere in IPC(inter process communication)
+	- a general idea of client-server architecture 
+CLIENT side 
+#	AF_INET = INET streaming sockets 
+	s = socket.socke(socket.AF_INET,socket.SOCK_STREAM)
+	s.connect(('python.org',80))
+#socket s establishes connection sends req 
+#the same socket s reads the reply from the server after reading the sockets 
+# gets destroyed 
+
+
+SERVER side
+	serversocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+	serversocket.bind((socket.gethostname(),80))  #gethostname() so that the 
+# socket is visible to outside world and for local visiblity bind(('localhost',80)) == 127.0.0.1
+	serversocket.listen(5)   # queing upto 5 requests before refusing requests 
+# client 
+    clientsock , addr = serversocker.accept()
+	
