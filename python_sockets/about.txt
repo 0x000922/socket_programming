@@ -1,7 +1,9 @@
 INET - ip4 sockets 
- what is a sockets? 
-	- used almost everywhere in IPC(inter process communication)
-	- a general idea of client-server architecture 
+ what is a socket? 
+	- a end point of a communication channel 
+	- used in IPC, websockets 
+	- 2  types of sockets exist SOCK_STREAM and SOCK_DGRAM
+	- 3 address family used AF_INET , AF_INET6 , AF_UNIX(for IPC in unix system locally)    
 CLIENT side 
 #	AF_INET = INET streaming sockets 
 	s = socket.socke(socket.AF_INET,socket.SOCK_STREAM)
