@@ -20,4 +20,9 @@ SERVER side
 	serversocket.listen(5)   # queing upto 5 requests before refusing requests 
 # client 
     clientsock , addr = serversocker.accept()
-	
+
+
+
+NOTE 
+	- both of the sockets on each end here are similar server = client i.e they they have same powers
+	- the use of client-server model is not compulsary in the use of sockets it is the choice of the developer 	
