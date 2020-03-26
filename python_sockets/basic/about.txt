@@ -1,28 +1,29 @@
 INET - ip4 sockets 
- what is a socket? 
-	- a end point of a communication channel 
-	- used in IPC, websockets 
+ what is a socket?
+	- a end point of a communication channel
+	- used in IPC, websockets
 	- 2  types of sockets exist SOCK_STREAM and SOCK_DGRAM
-	- 3 address family used AF_INET , AF_INET6 , AF_UNIX(for IPC in unix system locally)    
-CLIENT side 
-#	AF_INET = INET streaming sockets 
+	- many address family are available for use
+      eg       AF_INET , AF_INET6 , AF_UNIX(for IPC in unix system locally),AF_PACKET,AF
+CLIENT side
+#	AF_INET = INET streaming sockets
 	s = socket.socke(socket.AF_INET,socket.SOCK_STREAM)
 	s.connect(('python.org',80))
-#socket s establishes connection sends req 
-#the same socket s reads the reply from the server after reading the sockets 
-# gets destroyed 
+#socket s establishes connection sends req
+#the same socket s reads the reply from the server after reading the sockets
+# gets destroyed
 
 
 SERVER side
 	serversocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-	serversocket.bind((socket.gethostname(),80))  #gethostname() so that the 
+	serversocket.bind((socket.gethostname(),80))  #gethostname() so that the
 # socket is visible to outside world and for local visiblity bind(('localhost',80)) == 127.0.0.1
-	serversocket.listen(5)   # queing upto 5 requests before refusing requests 
-# client 
+	serversocket.listen(5)   # queing upto 5 requests before refusing requests
+# client
     clientsock , addr = serversocker.accept()
 
 
 
-NOTE 
+NOTE
 	- both of the sockets on each end here are similar server = client i.e they they have same powers
-	- the use of client-server model is not compulsary in the use of sockets it is the choice of the developer 	
+	- the use of client-server model is not compulsary in the use of sockets it is the choice of the developer
